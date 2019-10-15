@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CalculatorActivity">
+
+    <EditText
+        android:id="@+id/currentLevel"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="61dp"
+        android:gravity="center_horizontal"
+        android:inputType="number"
+        android:text="1"
+        app:layout_constraintEnd_toStartOf="@+id/targetLevelLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/currentLevelLabel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/targetLevel"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="61dp"
+        android:gravity="center_horizontal"
+        android:inputType="number"
+        android:text="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/targetLevelLabel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/currentEXP"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:gravity="center_horizontal"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/targetEXPLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/currentEXPLabel"
+        app:layout_constraintTop_toBottomOf="@+id/currentLevel" />
+
+    <TextView
+        android:id="@+id/targetEXP"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:gravity="center_horizontal"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/targetEXPLabel"
+        app:layout_constraintTop_toBottomOf="@+id/targetLevel" />
+
+    <TextView
+        android:id="@+id/currentLevelLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="Current Level:"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/currentLevel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/targetLevelLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="Target Level:"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/targetLevel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/currentLevel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/currentEXPLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="Current EXP:"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/currentEXP"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentLevelLabel" />
+
+    <TextView
+        android:id="@+id/targetEXPLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="Target EXP:"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/targetEXP"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/currentEXP"
+        app:layout_constraintTop_toBottomOf="@+id/targetLevelLabel" />
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="CALCULATE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentEXP" />
+
+    <TableLayout
+        android:id="@+id/expTableLayout"
+        android:layout_width="395dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/cell"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculateButton">
+
+        <TableRow
+            android:id="@+id/expTableHeader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/cell">
+
+            <TextView
+                android:id="@+id/expLabel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="EXP"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/iconLabel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell"
+                android:gravity="center_horizontal|center_vertical"
+                android:padding="5dp"
+                android:text="Icon"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/actionLabel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="175"
+                android:background="@drawable/cell"
+                android:gravity="center_horizontal|center_vertical"
+                android:padding="5dp"
+                android:text="Action/Product"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/quantityLabel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell"
+                android:gravity="center_horizontal|center_vertical"
+                android:padding="5dp"
+                android:text="Quantity"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/expTableRowOne"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="@drawable/cell">
+
+            <TextView
+                android:id="@+id/rowOneEXP"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell"
+                android:gravity="center_horizontal|center_vertical"
+                android:inputType="number"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/rowOneImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:adjustViewBounds="false"
+                android:background="@drawable/cell"
+                android:cropToPadding="true"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="5dp"
+                android:scaleType="centerInside"
+                app:srcCompat="@android:color/transparent" />
+
+            <TextView
+                android:id="@+id/rowOneAction"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="175"
+                android:background="@drawable/cell"
+                android:gravity="center_horizontal|center_vertical"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/rowOneQuantity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell"
+                android:gravity="center_horizontal|center_vertical"
+                android:inputType="number"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/expTableRowTwo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="@drawable/cell">
+
+            <TextView
+                android:id="@+id/rowTwoEXP"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell"
+                android:gravity="center_horizontal|center_vertical"
+                android:inputType="number"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/rowTwoImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell"
+                android:cropToPadding="true"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="5dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <TextView
+                android:id="@+id/rowTwoAction"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="175"
+                android:background="@drawable/cell"
+                android:gravity="center_horizontal|center_vertical"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/rowTwoQuantity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell"
+                android:gravity="center_horizontal|center_vertical"
+                android:inputType="number"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/expTableRowThree"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="@drawable/cell">
+
+            <TextView
+                android:id="@+id/rowThreeEXP"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell"
+                android:gravity="center_horizontal|center_vertical"
+                android:inputType="number"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/rowThreeImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell"
+                android:cropToPadding="true"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="5dp"
+                app:srcCompat="@android:color/transparent" />
+
+            <TextView
+                android:id="@+id/rowThreeAction"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="175"
+                android:background="@drawable/cell"
+                android:gravity="center_horizontal|center_vertical"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/rowThreeQuantity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/cell"
+                android:gravity="center_horizontal|center_vertical"
+                android:inputType="number"
+                android:textSize="18sp" />
+        </TableRow>
+
+    </TableLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/calculatorToolbar"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="#4CAF50"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
